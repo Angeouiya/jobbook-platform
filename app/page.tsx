@@ -1,69 +1,70 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Icon } from "@/components/Icon";
 
-export default function Home() {
+export default function SplashPage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="flex flex-col relative w-full bg-surface flex-grow min-h-dvh justify-between items-center px-6 py-12 overflow-hidden">
+      {/* Ambient glow */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+        <div className="w-96 h-96 rounded-full bg-surface-bright/20 blur-3xl" />
+      </div>
+
+      {/* Top status */}
+      <div className="w-full flex justify-between items-center z-10">
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          <span className="text-label-sm text-on-surface-variant uppercase tracking-widest">
+            Secure Gateway
+          </span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <span className="text-label-sm text-on-surface-variant/60 uppercase">
+          v4.8.2-EXC
+        </span>
+      </div>
+
+      {/* Central brand */}
+      <div className="flex flex-col items-center text-center z-10 my-auto max-w-sm animate-fade-in">
+        <div className="w-20 h-20 mb-8 rounded-xl bg-surface-container-highest flex items-center justify-center shadow-2xl relative">
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-surface-variant/20 to-transparent" />
+          <Icon name="diamond" size={36} fill className="text-primary" />
         </div>
-      </main>
-    </div>
+
+        <h1 className="text-display-hero text-on-surface tracking-tight mb-3">
+          Job<span className="text-primary font-light">Book</span>
+        </h1>
+
+        <p className="text-body-md text-on-surface-variant italic font-light tracking-wide max-w-xs">
+          &ldquo;Les bonnes missions. Les bons professionnels.&rdquo;
+        </p>
+
+        <div className="mt-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant text-label-sm uppercase tracking-wider">
+          <Icon name="verified" size={14} className="text-secondary" />
+          <span>Executive Syndicate</span>
+        </div>
+      </div>
+
+      {/* Bottom actions */}
+      <div className="w-full max-w-sm flex flex-col gap-4 z-10 pb-6 animate-slide-up">
+        <Link href="/accueil" className="btn-primary py-4 text-label-md">
+          <span>Continuer</span>
+          <Icon name="arrow_forward" size={18} />
+        </Link>
+        <div className="flex justify-center items-center gap-6 mt-2">
+          <Link
+            href="/administration"
+            className="text-label-sm text-on-surface-variant hover:text-on-surface transition-colors"
+          >
+            Institutional Index
+          </Link>
+          <span className="w-1 h-1 rounded-full bg-outline-variant" />
+          <Link
+            href="/messagerie"
+            className="text-label-sm text-on-surface-variant hover:text-on-surface transition-colors"
+          >
+            Private Ledger
+          </Link>
+        </div>
+      </div>
+    </main>
   );
 }
