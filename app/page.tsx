@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@/components/Icon";
 
 export default function SplashPage() {
@@ -24,9 +25,18 @@ export default function SplashPage() {
 
       {/* Central brand */}
       <div className="flex flex-col items-center text-center z-10 my-auto max-w-sm animate-fade-in">
-        <div className="w-20 h-20 mb-8 rounded-xl bg-surface-container-highest flex items-center justify-center shadow-2xl relative">
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-surface-variant/20 to-transparent" />
-          <Icon name="diamond" size={36} fill className="text-primary" />
+        <div className="relative mb-8 animate-fade-in-scale">
+          <div className="absolute -inset-4 rounded-3xl bg-brand-burgundy/10 blur-2xl" />
+          <div className="relative w-24 h-24 rounded-2xl overflow-hidden shadow-2xl ring-1 ring-border-light">
+            <Image
+              src="/logo-jobbook.jpg"
+              alt="JobBook"
+              width={96}
+              height={96}
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
 
         <h1 className="text-display-hero text-on-surface tracking-tight mb-3">

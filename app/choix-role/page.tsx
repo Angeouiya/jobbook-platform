@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Icon } from "@/components/Icon";
+import { Logo } from "@/components/Logo";
 import Link from "next/link";
 
 export default function ChoixRolePage() {
@@ -12,10 +13,7 @@ export default function ChoixRolePage() {
       <div className="flex flex-col w-full px-4 pb-8">
         {/* Header */}
         <header className="flex items-center justify-between w-full py-4">
-          <div className="flex items-center gap-1">
-            <div className="w-2.5 h-2.5 rounded-sm bg-secondary" />
-            <span className="text-headline-sm text-on-surface tracking-wider uppercase">JobBook</span>
-          </div>
+          <Logo size={32} withText />
           <div className="flex items-center gap-1 bg-surface-container px-2 py-1 rounded-sm">
             <button className="text-label-sm text-on-surface font-semibold">FR</button>
             <span className="text-outline text-caption leading-none">|</span>

@@ -1,4 +1,5 @@
 import { Icon } from "./Icon";
+import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 import Link from "next/link";
 
@@ -28,13 +29,8 @@ export function AppHeader({
               <Icon name="arrow_back_ios_new" size={20} />
             </Link>
           )}
-          <Link href="/accueil" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary">
-              <span className="text-headline-sm tracking-tighter">JB</span>
-            </div>
-            <span className="text-label-md tracking-widest uppercase text-on-surface font-semibold">
-              JobBook
-            </span>
+          <Link href="/accueil">
+            <Logo size={34} withText />
           </Link>
         </div>
 
