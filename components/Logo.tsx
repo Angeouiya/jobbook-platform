@@ -21,7 +21,7 @@ export function Logo({ size = 32, className = "", withText = false }: LogoProps)
           alt="JobBook"
           width={size}
           height={size}
-          className="object-cover"
+          className="object-cover mix-blend-multiply dark:mix-blend-normal"
           priority
         />
       </div>

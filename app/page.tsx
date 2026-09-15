@@ -33,7 +33,7 @@ export default function SplashPage() {
               alt="JobBook"
               width={96}
               height={96}
-              className="object-cover"
+              className="object-cover mix-blend-multiply dark:mix-blend-normal"
               priority
             />
           </div>
