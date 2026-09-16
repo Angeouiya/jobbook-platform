@@ -118,7 +118,7 @@ export default function ChoixRolePage() {
 
         {/* CTA */}
         <div className="flex flex-col w-full mt-8 gap-3">
-          <Link href={role === "enterprise" ? "/espace-entreprise" : "/espace-prestataire"} className="btn-primary h-11">
+          <Link href={role === "enterprise" ? "/entreprise" : "/espace-prestataire"} className="btn-primary h-11">
             <span>Continuer</span>
             <Icon name="chevron_right" size={18} />
           </Link>
